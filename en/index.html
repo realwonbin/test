@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <title>이영</title>
+  <script>
+(function () {
+  const qs = new URLSearchParams(location.search);
+  const forced = qs.get('lang');
+  if (forced) localStorage.setItem('prefLang', forced);
+
+  const pref = localStorage.getItem('prefLang');
+  const isKo = (navigator.language || '').toLowerCase().startsWith('ko');
+
+  if (pref === 'en' && !location.pathname.startsWith('/en/')) {
+    location.replace('/en/');
+    return;
+  }
+
+  if (!pref && !isKo && !location.pathname.startsWith('/en/')) {
+    location.replace('/en/');
+  }
+})();
+</script>
+
+
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4MVZW5WJMF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4MVZW5WJMF');
+</script>
+  <link rel="stylesheet" href="/style-index.css">
+  <link rel="stylesheet" href="/style-mobile.css" media="only screen and (max-width: 480px)">
+  <!--<script>
+    const lang = navigator.language || navigator.userLanguage;
+    
+    // 한국어가 아닌 경우
+    if (!lang.startsWith('ko')) {
+      window.location.href = "/en/index.html";  // 영어 페이지 경로
+    }
+  </script>-->
+</head>
+<body>
+  <header>
+  <nav class="intro-nav" role="tablist" aria-label="작업 서문">
+    <ul>
+      <li><a id="tab-intro4" href="#intro4" class="intro-tab active"
+       role="tab" aria-controls="intro4" aria-selected="true" tabindex="-1">In Progress</a></li>
+
+<li><a id="tab-intro0" href="#intro0" class="intro-tab"
+       role="tab" aria-controls="intro0" aria-selected="false" tabindex="0">Beginning</a></li>
+
+<li><a id="tab-intro1" href="#intro1" class="intro-tab"
+       role="tab" aria-controls="intro1" aria-selected="false" tabindex="-1">Tangled Threads, Moon Jar</a></li>
+
+<li><a id="tab-intro2" href="#intro2" class="intro-tab"
+       role="tab" aria-controls="intro2" aria-selected="false" tabindex="-1">This Text Does Not Explain the Work</a></li>
+
+<li><a id="tab-intro3" href="#intro3" class="intro-tab"
+       role="tab" aria-controls="intro3" aria-selected="false" tabindex="-1">What Is Closest Is Often the Farthest Away</a></li>
+
+    </ul>
+  </nav>
+</header>
+  <main class="container">
+  <!-- 섹션: role="tabpanel" / aria-labelledby 로 탭과 1:1 매핑 -->
+   <section id="intro4" class="intro-section active" role="tabpanel" aria-labelledby="tab-intro4">
+    <!--<br><h2>2025. 12. 19. - 2026. 01. 11.</h2><br>-->
+          <a href="https://planb2025.younglee.co.kr"><img src="https://episodearth.synology.me/images-large/clocktower/postcard.jpg" style="display:block; width:100%; height:auto;"></a><br>
+          <a href="https://www.instagram.com/planbprojectspace/">플랜비 프로젝트 스페이스 인스타그램 / PlanB project space</a>
+          <br>
+          
+  </section>
+  <section id="intro0" class="intro-section" role="tabpanel" aria-labelledby="tab-intro0">
+    <br><h2>이영</h2><br>
+          <!--<div class="image-text-block">      
+            다양한 삶은 공통된 구조를 통해 연결되어 있다. 나는 사진을 매개로 그 구조를 발견하고 기록한다. 삶의 흔적은 사회문화적 가치와 교차하며 인덱스로 남고,
+             때로는 보편적인 형태로 나타난다. 작업은 일상의 구조를 수집하고, 밀도 높은 교차점에서 관계를 바라보는 태도로 이어진다. 같은 사람이 없지만 비슷한 삶은 반복된다. 
+             나는 그 반복 속에서 감응과 구조의 가능성을 탐색한다.           
+          </div>-->
+          <br>
+          <div class="image-text-block">
+            <a href="contents/en/everythingmarket.html">
+              <img src="/images/everythingmarket/img1.jpg" alt="프로젝트 1 이미지 1"></a>
+            <div class="text-description">
+              <h3>Words on the Surface: <br class="br-desktop">Continuities and Expansions of Signboard Records Originating from the Hwanghak-dong Everything Market</h3>
+              <p>This body of work began by examining the local specificity of secondhand traditional markets.
+Signboards reveal distinct characteristics through their typographic formal qualities and through clusters of words that can be grouped into categories.
+
+This investigation led to the subsequent project Peace and Unification, which explores the reality of national division, while the collection of hand-painted signboards has continued in parallel.
+The accumulated works were organized into a solo exhibition at Label Gallery, followed by several collaborative projects.
+Through this process, the boundaries of the work were gradually expanded.
+
+Rather than remaining within mechanical repetition, the practice began to incorporate image-transfer techniques and previously overlooked materials.
+Works such as Scales, which employs transfer processes, and Loose Jumper, which uses plastic bags, mark an expansion toward more active modes of engagement grounded in text.
+
+   
+            </div>
+          </div>
+          <div class="image-text-block">
+            <a href="contents/en/haj.html">
+              <img src="/images/haj/img4.jpg" alt="프로젝트 1 이미지 1"></a>
+            <div class="text-description">
+              <h3>Irreducible Things: <br class="br-desktop">From Nonlinear Time to an Ecological–Ethical Sensibility</h3>
+              <p>Inspired by Park Kyung-ni’s poem Jujube and the Honeybee, this series records landscapes where urban plants and artificial structures coexist.
+Abstract concepts and emotions are approached through concrete subjects and specific situations.
+
+Rather than being resolved or reduced, life and death, as well as the formation and dissolution of subjectivity, are accepted as irreducible conditions.
+This sensuous acceptance forms a foundational attitude of the work.
+
+From an awareness of non-linear time, an ecological–ethical sensibility gradually emerges.
+As this attitude intersects with reflections on photography’s ontological stance, the practice unfolds through the recognition of organic structures and responsive engagement with them.
+
+In this process, the work does not move toward abstraction, but instead allows everyday sensibilities to appear as sites where irreducibility is sustained.</p>
+
+            </div>
+          </div>
+          <div class="image-text-block">
+            <a href="contents/en/chungmuro.html">
+              <img src="/images/chungmuro/img1.jpg" alt="프로젝트 1 이미지 1"></a>
+            <div class="text-description">
+              <h3>Structures in Formation: <br class="br-desktop">Recording Events and Discovering Types</h3>
+              <p>This ongoing project records the presence of so-called <em>jeoksan-gageok</em>—
+    houses left behind during the colonial period
+    that remain embedded within contemporary urban environments.
+  </p>
+
+  <p>
+    Chungmuro, despite its name,
+    is often perceived as a place marked by historical atmosphere.
+    As external conditions change,
+    perceptions of locality also shift.
+  </p>
+
+  <p>
+    Networks grow increasingly dense
+    and extend flexibly across boundaries.
+    As regional specificity becomes diffuse,
+    the universal characteristics of structure
+    begin to surface.
+  </p>
+
+  <p>
+    This work follows the flow of types,
+    functioning simultaneously
+    as a process of recording
+    and one of discover
+    
+             </div>
+          </div>     
+  </section>
+
+  <section id="intro1" class="intro-section" role="tabpanel" aria-labelledby="tab-intro1">
+    <br><h2>Entangled Threads, Moon Jar</h2><br>
+      <p>
+
+A time machine will never appear.
+The world is repeatedly reassembled around certain memories.
+There is no objective fact to return to, and therefore no use for such a device.
+There is no beginning, and no final closure.<br>
+
+If one were to trace my photographs of signs, the portfolio would mark *Manmul Market* (2007) as the starting point. But that was only a result. Or perhaps a cause.
+The thread reaches further back.<br>
+
+In 1997 or 1998, after a school trip, my mother scolded me for photographing useless things—explanatory signs and directional markers. Even then, I rarely photographed people.
+Ten years earlier, in 1986 or 1987, I walked with my mother along the commercial street across Nambu Market, reading every sign aloud without pause. She praised me at first, then asked me to stop, exhausted.<br>
+
+No photographs remain from that time.
+My mother has never been attached to photographs. When we moved to Wonju, everything was lost. One remaining image—perhaps from my first birthday—was given away after a shaman warned that I might die young. I have since outlived my father’s age. Perhaps it worked.<br>
+
+In truth, I am similar.
+When I lose rolls of film, or erase original digital files, I simply photograph again. I do not see the world as a chain of specific events, but as a sequence of recurring reorganizations. Still, I resist speaking of this in abstract terms.<br>
+
+Time unraveling endlessly, like a loose thread, holds little meaning for me.
+A moon jar appears different depending on where one stands, yet its form remains unchanged. This is why I chose the title. The jar invites the perception of a perfect circle—a geometry that does not exist in reality. A Gestalt world. Perhaps this is the most binding illusion: the helplessness suspended between the ideal and the real.<br>
+
+Losing all my photographs would be difficult, but not impossible.
+During a mixed-media class at Keimyung University, we were asked to extend expression by scratching directly onto film. I photographed mannequins through a small window in a locked storage room. There was no alternative viewpoint. I scratched every frame and submitted them all.<br>
+
+I said I could photograph it again.
+The professor replied that if I could reproduce the same image, I would receive the highest grade.<br>
+
+I returned. The door was still locked. I stood in the same place.
+But the mannequins had moved.<br>
+
+I understood then that the same photograph cannot exist.
+This was not merely irreversibility. The configuration had changed, but the room remained sealed. The mannequins were still standing. Nothing essential had altered.<br>
+
+There was no clear trajectory. No dream to follow.
+As a child, I may have written “scientist” once. I do not remember anything after that. I entered photography almost accidentally, without even owning a camera. I continue not because of intensity or ambition, but because I do not stop easily.<br>
+
+After returning from military service, I briefly worked harder than usual. I discovered *punctum* too quickly—an unremarkable brown mark on my back. Something I had forgotten until that moment.<br>
+
+Eventually, I began to avoid photographs that produced deliberate discomfort. What Barthes called *punctum* felt less like revelation than an alibi. A justification that escaped structure. I learned to use it when necessary, but I no longer trusted it.<br>
+
+Returning to the foundations of photography felt inevitable.
+Photography is a precise record of a moment. This apparent certainty compels doubt toward reality itself. At its limit, it becomes abstract.<br>
+
+What modern photographers achieved was not merely technical mastery, but the opening of conceptual expansion. They made it possible to draw a circle from a moon jar. A closed system formed by imperfect asymmetry and multiple centers. A world without directional progress—only recombination.<br>
+
+Such a world can exist only by accepting the imbalance between what cannot be reconciled.<br>
+ </p> 
+
+  </section>
+
+  <section id="intro2" class="intro-section" role="tabpanel" aria-labelledby="tab-intro2">
+  <br>
+        <h2>This Text Does Not Explain the Work</h2><br>
+        More than ever, I am concerned with how my work is understood by others.
+For a long time, I did not call it “work.”
+The word felt unfamiliar, slightly uncomfortable.
+I would say, simply, “I take photographs.”
+Not my work, but my photographs.<br>
+        Perhaps this was because I understood that “work” is not simply a result,
+but something that takes form through the interaction of attitude,
+direction, and relation.
+Abstract language often sounds declarative, so I avoided it.
+And because work does not necessarily resolve into its outcomes in any clear way,
+I postponed naming it as such. <br>
+Over the past few years, after going through various open calls
+and portfolio reviews, I became more aware of how my work was being received.
+I felt positioned at a boundary, at the periphery.
+Partly because I am not articulate,
+but perhaps the first button had been fastened incorrectly from the beginning.
+More than my temporary despair,
+I recognized that there was little left to expect.<br>
+        <blockquote>A way of living cannot be separated from work.
+A medium can move beyond its essence
+only through an understanding of that essence,
+from which other possibilities may emerge.
+</blockquote>
+        Photography engages time and space more directly than any other medium.
+    Photography and moving image are often grouped together out of convenience,
+    but they are fundamentally different.
+    Moving image follows a narrative structure of cause and effect,
+    and through editing, it erases coordinates of time and space
+    to construct an independent spatiotemporal order.
+    In this sense, it resembles painting:
+    a composed world.
+    Ultimately, moving image represents time and space,
+    rather than dealing with them directly.<br>
+    The spatiotemporal sensibility of photography, on the other hand,
+	is bound to concrete physical reality.
+	This also means that basic mechanics are at work.
+	Within a dynamic field in which political, social, cultural,
+	and historical relations are inseparably entangled,
+	the subject emerges and disappears as a small field among others.
+	Photography is inherently relational,
+	as it cannot exist independently.<br>
+        <br><blockquote>It occupies physical coordinates,
+	    but not merely as positional values—
+	    rather, as points of dense relational intersection.
+	    The “field” is the foundation of photography,
+	    yet it also tends to expand beyond the image frame,
+	    blurring its own form.
+<br>
+        Within a closed system, total energy remains constant.<br>
+    Energy may transform into various forms,
+    but its total amount does not change.<br>
+    — <em>The First Law of Thermodynamics</em> </blockquote>
+        Psychodynamic theorists built their frameworks
+    on the assumption that the psyche possesses force and direction,
+    and that it can be transferred.
+    Nietzsche’s concept of eternal recurrence similarly demonstrated
+    the possibility of affirmation and will
+    through the recombination of finite matter within infinite time.<br>
+    Mental phenomena trace trajectories akin to physical laws,
+    intertwining as a field,
+    and work operates as a process of interaction within it.
+    The resulting image goes beyond projection,
+    revealing conditions of resonance
+    in which structured moments allow recognition
+    and response between entities.<br>
+Resonance occurs as a structural correspondence—
+    repeatable in form and amplitude—
+    even when existential forms differ.<br>
+
+<p></p> 
+                
+        <img src="/images/foreword/stieglitz1.jpg" alt="구름 작업" style="width: 40%;">
+        
+            <p style="margin-top: 0.1em;"><em>Clouds.</em>
+    An expression employing projection
+    or structural equivalence.
+<p></p> 
+        Alfred Stieglitz presented <em>Equivalents</em>
+    using the motif of clouds.
+    When he suggested that the clouds reflected his emotions,
+    this may have been closer to projection—
+    an intuitive, aesthetic approach.
+    Because he left no explicit explanation,
+    we cannot be certain.<br>
+ In photographic history,
+    the work is often understood
+    as a departure from pictorialism
+    and the beginning of a subjective practice.
+    Later theorists interpreted it
+    as structural equivalence:
+    the process and form of cloud formation
+    resonated in amplitude
+    with the artist’s lived fluctuations.<br> 
+     Though difficult to separate,
+    if someone experiencing a similar impasse
+    encounters resonance through Stieglitz’s work,
+    that resonance cannot be reduced to emotion alone.
+    Empirically,
+    no two clouds—neither in a series nor in reality—
+    are ever the same.
+    Resonance emerges
+    not from intuition alone,
+    but from a structural response.<br><p></p>
+        <img src="/images/foreword/bresson.jpg" alt="결정적 순간 작업" style="width: 40%;"><br>
+        <p style="margin-top: 0.1em;"><em>Henri Cartier-Bresson’s contact sheets.
+    Repeated exposures
+    in pursuit of a complete composition.</em></p><p></p> 
+        I understand structural approaches
+    as a leap toward non-linear time.
+    When an organically changing field is structured,
+    it does not remain within sequential,
+    causal time,
+    but exists independently outside it.<br>
+
+       When Cartier-Bresson’s contact sheets were revealed,
+    many may have felt disappointed
+    by his notion of the “decisive moment.”
+    The French title translates as
+    <em>Images à la Sauvette</em>—
+    images taken on the run—
+    while the English title emphasizes decisiveness.<br>
+
+        
+        <blockquote>“For me, photography is the simultaneous recognition
+    of an event’s meaning
+    and the precise arrangement of forms
+    that best articulate it.
+    This occurs within a fraction of a second.”<br>
+    — <em>Henri Cartier-Bresson</em>
+</blockquote>
+        Yet the contact sheets reveal
+that countless repetitions were necessary
+to achieve formal completion
+behind a single finished image.<br>
+        Through form—rhythm, balance, composition—
+    he produced results.
+    This was not a slice of linear time,
+    but a structural moment
+    that relocated reality outside time
+    through recombination.<br>  Even if a moment is “decisive,”
+    it is articulated
+    through an internal structure.
+    Form becomes content.
+    It was an optimized practice.
+    Still,
+    I required more intersections—
+    moments reached not through individual subjects,
+    but through resonance between structures.<br>
+        <br><br>
+        
+        <img src="/images/foreword/weston.jpg" alt="에드워드웨스톤 작업" style="width: 30%;"><br>
+        <p style="margin-top: 0.1em;"><em><em>Pepper.</em>
+    Expressing photographic form.</em></p><p></p> 
+       Opposite Stieglitz stood Group f/64,
+    who likewise rejected pictorialism.
+    While Stieglitz explored intuitive possibility,
+    Group f/64 pursued
+    the extremes of photographic clarity.
+    Using the f/64 aperture,
+    they achieved formal sharpness
+    and absolute control.<br>
+This represented
+    the aesthetic transference
+    of an objective photographic vision.
+    At the same time,
+    photography had already begun
+    to extend beyond pictorialism,
+    engaging the world
+    through internal and external structures,
+    expanding into a dynamic field.<br>
+
+        Perhaps form can be more
+    than a mode of expression—
+    perhaps it is a method
+    for approaching essence itself. <p></p>
+            <img src="/images/foreword/becher.jpg" alt="베허부부 작업" style="width: 50%;">
+            <p style="margin-top: 0.1em;"><em>Anonymous Sculptures.</em>
+    Individuality revealed
+    through structures of repetition.</p><p></p> 
+     
+        Bernd and Hilla Becher
+    arranged industrial structures in grids
+    to enable typological comparison.
+    Each building was independent
+    yet part of a type,
+    revealing aesthetic value
+    through the repetition of difference
+    and structural sameness.<br>
+
+        They called this
+    <em>Anonymous Sculptures</em>.
+    By reorganizing dispersed,
+    individualized objects
+    into structural systems,
+    they generated meaning.
+    This extends beyond documentation
+    into ontology.<br>
+
+         Without difference,
+    type cannot be perceived.
+    Without type,
+    difference cannot be recognized.
+    Typology becomes
+    a condition
+    for the appearance of individuality—
+    and a way
+    of encountering the other.
+<br>
+         <blockquote>“Death is the possibility
+    of Dasein’s ownmost being.”<br>
+    — <em>Martin Heidegger</em><br>
+    “The Other turns me into an object.
+    Under that gaze,
+    I am no longer myself.”<br>
+    — <em>Jean-Paul Sartre</em>
+</blockquote>
+        
+        The subject exists temporarily
+    within a flow.
+    Existence expands toward the other
+    through individuality.
+    Death,
+    uniquely embodied by each subject,
+    is an absolute condition of individuality,
+    yet it may also function
+    as a condition of typology.<br>
+    As beings who recognize an end,
+    our sense of physical,
+    linear time forms a bounded field
+    that continues to change organically.
+    Individual fields may resonate
+    with others through structure.
+    Approaching across boundaries
+    becomes possible
+    through corresponding structures.
+  </p>
+
+  <p>
+    Thus,
+    I perceive and respond
+    to the structure of the other
+    through my own.
+    This is both
+    a dismantling
+    of the tendency
+    to close oneself into completion,
+    and an effort
+    to expand relational networks
+    into a larger field.
+  </p>
+
+  <p>
+    It is a non-destructive,
+    non-violent approach—
+    my ethical sense of distance.
+    It is also my hesitation,
+    and the enduring distance
+    to the other,
+    who can never be identical
+    nor fully reached.
+  </p>
+  <p>
+    Resonance is my best attempt—
+    one mode of existence.
+  </p>
+
+
+    <p></p>
+         <img src="/images/foreword/img22.jpg" alt="내 작업" style="width: 50%;"><br>
+         <p style="margin-top: 0.1em;"><em>Photography does not speak
+    <em>about</em> this person.<br>
+    It is revealed
+    only through structure.<br><em>Artificial flower/ Young Lee</em></p>
+    
+  </section>
+
+  <section id="intro3" class="intro-section" role="tabpanel" aria-labelledby="tab-intro3">
+    <br>
+      <h2>What is Closest Is Furthest Away</h2><br>
+      
+
+<div class="essay essay-en">
+
+  <p>
+    Living is a quiet act of drawing constellations,
+unnoticed by others.
+A plausible life,
+belonging to someone I will never know,
+feels less intimate
+than Orion,
+always there in the night sky.
+  </p>
+
+  <p>
+    In the early-morning elevator,
+someone who looked tired stepped in.
+The stale scent of rice lingered,
+and it brought back the memory
+of forcing down mouthfuls
+just to keep going.
+Even without anyone watching,
+I could not live that way.
+  </p>
+
+  <p>
+    Only by leaving home in the dark
+could I arrive at work on time.
+Eating was not optional.
+The work demanded it.
+  </p>
+
+  <p>
+    At the top of the subway stairs,
+where the bluish dawn sky meets the street,
+there was my grandmother’s gimbap stand.
+I went to work on my first day without knowing much,
+having eaten nothing,
+barely making it through the day.
+The next morning, I bought a single roll.
+One thousand won, perhaps.
+Or fifteen hundred.
+I wondered how anyone could make a living selling it that way.
+  </p>
+
+  <p>
+   With aching arms,
+I picked up the uncut roll,
+still fully wrapped in foil.
+Walking, I peeled it back with difficulty,
+losing what little warmth remained.
+What time had she woken up?
+She must have been exhausted.
+  </p>
+
+  <p>
+    With no appetite,
+I tore into the gimbap,
+forcing myself to eat,
+like a wild animal.
+My fingers would not close properly;
+every movement pulled at my forearms.
+As I struggled to bite and chew,
+I thought of my grandmother.
+A stomach that could not finish even a single roll
+could imitate nothing.
+  </p>
+
+  <p>
+    Like that day,
+from far off—whether stairway or sky—
+a man approached,
+a streetlight behind him,
+his figure blinking into view.
+His oversized jacket fluttered,
+making his light steps seem larger,
+almost like wings.
+
+The black plastic bag in his hand
+looked as if it held only a few cartons of milk.
+The way it kept swinging as he walked—
+as if confirming how little remained—
+it felt as if the bag itself
+was carrying his will.
+  </p>
+
+  <p>
+    I had somewhere to go that night,
+but his car was double-parked in front of mine.
+The handbrake was firmly set,
+almost too carefully.
+There was no phone number on the windshield.
+Momentarily at a loss,
+I looked for some way to reach him.
+  </p>
+
+  <p>
+    The car was so transparent
+that I couldn’t tell whether the back window was open or closed.
+I leaned in,
+then flinched,
+afraid I might collide with glass I assumed was there.
+
+Inside,
+children’s books lay stacked at an angle,
+and a small blanket
+barely cradled a green milk crate,
+now almost empty.
+  </p>
+
+  <p>
+    I pretended not to notice.
+I walked far enough away
+that he would not see me,
+like someone merely passing by.
+There was no need to go that far.
+  </p>
+
+  <p>
+  I pushed her away.
+No.
+I stepped back.
+She was transparent.
+  </p>
+
+  <p>
+    A white blouse,
+responding even to the slightest breeze.
+A long black skirt,
+out of season,
+made strangely brilliant—
+like spring flowers—
+by the awkward splay of her steps.
+  </p>
+
+  <p>
+    What if
+she had simply remained at a distance?
+She became farther
+than anyone who might plausibly exist.
+Having gone too far,
+she returns to me only from time to time.
+  </p>
+
+  <p>
+    She was someone
+I could not speak of
+while she was still close.
+Only with distance
+did it become possible to speak.
+
+She went too far.
+From beyond the reach of words,
+everything flowers.
+  </p>
+
+  <p>
+    Long ago,
+I behaved as if everything had already ended.
+It feels strangely new.
+
+Knowing that you left the world,
+I spent the night gasping for breath.
+How exhausting it must have been
+to carry a sleepless night all the way through.
+  </p>
+
+  <p>
+   Perhaps we were too close—
+close enough for me to know her too well.
+Even if the world quietly overturns itself again,
+the only change in my life
+is that I started using Instagram.
+  </p>
+
+  <p>
+    I hoped,
+by way of imitation,
+that my unremarkable life
+might become even slightly transparent.
+There was no time
+to be sincere.
+  </p>
+
+  <p>
+    I am still here.
+If anyone is sad,
+they may come.
+That was all.
+  </p>
+
+</div>
+  
+  </section>
+  <section id="intro0" class="intro-section" role="tabpanel" aria-labelledby="tab-intro0">
+    <!--<br><h2>전시엽서</h2><br>-->
+          
+  </section>
+  <br>
+  <div class="hidden-content"></div> <!-- ✅ 토글링크에 대응하는 콘텐츠 -->
+
+  <div class="selector-row">
+  <div class="select-field">
+    <label for="surface" class="select-label">Surface Language</label>
+    <select id="surface" name="surface">
+      <option value="" selected disabled>
+        Continuity and expansion of signboard documentation originating from the Hwanghak-dong Everything Market
+      </option>
+
+      <option value="contents/everythingmarket.html">2007 《Everything Market》</option>
+      <option value="contents/renminro.html">2008 《Renmin Road》</option>
+      <option value="contents/pnr0910.html">2009–2010 《Peace and Unification》</option>
+      <option value="contents/hoankiem.html">2018 《Hoan Kiem》</option>
+      <option value="contents/weissensee.html">2021 《Weissensee》</option>
+      <option value="contents/sarangkot.html">2022 《Saranggot》</option>
+      <option value="contents/scale.html">2023 《Scales》</option>
+      <option value="contents/algodonales.html">2024 《Algodonales》</option>
+    </select>
+  </div>
+
+  <div class="select-field">
+    <label for="irreducible" class="select-label">Irreducible Things</label>
+    <select id="irreducible" name="irreducible">
+      <option value="" selected disabled>
+        From non-linear time toward an eco-ethical sensibility (including social existence)
+      </option>
+      <option value="contents/haj.html">2005 《Jujubes and Honeybees》</option>
+      <option value="contents/kod.html">2005–07 《Knocking on the Door》</option>
+      <option value="contents/cambo.html">2007 《Mr. Bunbanna, 37, from Cambodia》</option>
+      <option value="contents/oosy.html">2009 《The Invisible You》</option>
+      <option value="contents/st.html">2009–15 《Stone Towers》</option>
+      <option value="contents/af.html">2011– 《Harmony》</option>
+    </select>
+  </div>
+
+  <div class="select-field">
+    <label for="inprogress" class="select-label">Structures in Progress</label>
+    <select id="inprogress" name="inprogress">
+      <option value="" selected disabled>
+        Recording events and discovering types
+      </option>
+      <option value="contents/chungmuro.html">2009 《Chungmuro》</option>
+      <option value="contents/firefly.html">2017–2018 《Fireflies》</option>
+      <option value="contents/clocktower.html">2025 《Cheap Clocks》</option>
+      <option value="contents/resume.html">Exhibition History</option>
+      <option value="contents/updatelog.html">Update Log</option>
+    </select>
+  </div>
+</div>
+
+  
+  </main>
+</body>
+<br>
+<footer class="external-menu">
+  <nav class="external-links">
+    <!--<a href="https://margins.younglee.co.kr" class="menu-link" target="_blank" rel="noopener">Margins / Vaults</a>
+    <a href="https://blog.younglee.co.kr" class="menu-link" target="_blank" rel="noopener">Blog</a>
+    <a href="https://instagram.com/iam2020/" class="menu-link" target="_blank" rel="noopener">Instagram</a>-->
+    <a href="mailto:iam2022@gmail.com" class="menu-link">iam2022@gmail.com</a>
+  </nav>
+  -<nav class="lang-switch">
+  <a href="/?lang=ko" rel="nofollow">KR</a> ·
+  <a href="/en/?lang=en" rel="nofollow">EN</a> ·<!--
+  <a href="/jp/?lang=jp" rel="nofollow">JP</a> ·
+  <a href="/zh/?lang=zh" rel="nofollow">ZH</a> ·
+  <a href="/zh-hant/?lang=zh-hant" rel="nofollow">ZH-Hant</a> ·
+  <a href="/es/?lang=es" rel="nofollow">ES</a> ·
+  <a href="/ar/?lang=ar" rel="nofollow">AR</a> ·
+  <a href="/vi/?lang=vi" rel="nofollow">VI</a> ·
+  <a href="/th/?lang=th" rel="nofollow">TH</a> ·
+  </nav>-->
+</footer>
+<script src="/script.js"></script>
+</html>
+
+

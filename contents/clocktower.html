@@ -7,9 +7,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
 
-  <!-- 스타일: 기본 → 다크 순서 -->
-  <link rel="stylesheet" href="../style-cont.css" />
-  <link rel="stylesheet" href="../style-cont-dark.css" />
+  <link rel="stylesheet" href="../style-cont.css?v=13" />
+  <script src="../assets/portfolio-sidebar.js?v=8" defer></script>
 
   <script>
     // (선택) 팝업 모드
@@ -20,7 +19,7 @@
     }
   </script>
 </head>
-<body>
+<body class="legacy-sidebar-page">
 <main class="container">
 
   <h2>시계탑 / 2018,2025</h2>
@@ -100,9 +99,8 @@
         
       </div>
 
-      <!-- 2019 선행작 여닫기 -->
-      <details class="more-gallery" style="margin-top:12px">
-        <summary class="btn-line small">📂 2018년 선행 작업 접기/펼치기</summary>
+      <section class="more-gallery" style="margin-top:42px">
+        <h3>2018년 선행 작업</h3>
         <div class="image-gallery four" style="margin-top:12px">
           <!-- 2019도 같은 그룹 "clock" 으로 묶음 -->
           <a href="../images/clocktower/b-1.jpg"  data-lightbox="clock" rel="lightbox" data-title="2019"><img src="../images/clocktower/b-1.jpg"  alt="" loading="lazy"></a>
@@ -129,7 +127,7 @@
           <a href="../images/clocktower/b-22.jpg" data-lightbox="clock" rel="lightbox" data-title="2019"><img src="../images/clocktower/b-22.jpg" alt="" loading="lazy"></a>
           <a href="../images/clocktower/b-23.jpg" data-lightbox="clock" rel="lightbox" data-title="2019"><img src="../images/clocktower/b-23.jpg" alt="" loading="lazy"></a>
         </div>
-      </details>
+      </section>
 
       <!-- 지도 모달 런처 
       <div style="margin-top:18px">

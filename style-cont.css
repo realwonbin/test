@@ -250,7 +250,7 @@ h2 {
 @media(max-width:480px){.legacy-sidebar-head nav a:nth-child(n+3){display:none}.legacy-work-list.is-open{display:block}.legacy-work-list section{margin-bottom:26px}.legacy-sidebar-page .image-gallery.five{grid-template-columns:repeat(2,1fr)}}
 
 .legacy-work-list .sidebar-texts{margin-top:38px;padding-top:20px;border-top:1px solid #d7d3ce}.legacy-work-list .sidebar-texts a{grid-template-columns:60px minmax(0,1fr)}.legacy-work-list .sidebar-texts a span{font-size:10px}
-.legacy-work-list .sidebar-exhibitions{margin-top:38px;padding-top:20px;border-top:1px solid #d7d3ce}.legacy-work-list .sidebar-exhibitions a{grid-template-columns:60px minmax(0,1fr)}
+.legacy-work-list .sidebar-exhibitions{margin-top:38px;padding-top:20px;border-top:1px solid #d7d3ce}.legacy-work-list .sidebar-exhibition-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:3px 0;border:0;background:transparent;color:#777;font:inherit;font-size:11px;line-height:1.4;cursor:pointer;text-align:left}.legacy-work-list .sidebar-exhibition-toggle:hover{color:#191919}.legacy-work-list .sidebar-exhibition-toggle small{color:#999;font-size:10px;font-weight:400}.legacy-work-list .sidebar-exhibition-toggle span::after{content:" ＋"}.legacy-work-list .sidebar-exhibition-toggle[aria-expanded="true"] span::after{content:" －"}.legacy-work-list .sidebar-exhibition-links{display:none;padding-top:9px}.legacy-work-list .sidebar-exhibition-links.is-open{display:block}.legacy-work-list .sidebar-exhibitions a{grid-template-columns:60px minmax(0,1fr)}
 
 /* Unified portfolio pages */
 .legacy-sidebar-page{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:#fff;color:#191919;font-size:15px;line-height:1.75}

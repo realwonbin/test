@@ -65,14 +65,30 @@
 
   const exhibitionSection = `
     <section class="sidebar-exhibitions">
-      <h2>전시 기록</h2>
-      ${exhibitionLinks.map(([label, name, href]) => `<a href="${href}" target="_blank" rel="noopener noreferrer"><span>${label}</span>${name}</a>`).join('')}
+      <button class="sidebar-exhibition-toggle" type="button" aria-expanded="false" aria-controls="sidebar-exhibition-links">
+        <span>전시 기록</span><small>${exhibitionLinks.length}</small>
+      </button>
+      <div id="sidebar-exhibition-links" class="sidebar-exhibition-links">
+        ${exhibitionLinks.map(([label, name, href]) => `<a href="${href}" target="_blank" rel="noopener noreferrer"><span>${label}</span>${name}</a>`).join('')}
+      </div>
     </section>`;
+
+  const bindExhibitionToggle = (scope) => {
+    const toggle = scope.querySelector('.sidebar-exhibition-toggle');
+    const links = scope.querySelector('.sidebar-exhibition-links');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      links.classList.toggle('is-open', open);
+    });
+  };
 
   const existingList = document.querySelector('.legacy-portfolio-layout .legacy-work-list');
   if (existingList) {
-    if (!existingList.querySelector('.sidebar-exhibitions')) existingList.insertAdjacentHTML('beforeend', exhibitionSection);
     if (!existingList.querySelector('.sidebar-texts')) existingList.insertAdjacentHTML('beforeend', textSection);
+    if (!existingList.querySelector('.sidebar-exhibitions')) existingList.insertAdjacentHTML('beforeend', exhibitionSection);
+    bindExhibitionToggle(existingList);
     return;
   }
 
@@ -85,7 +101,7 @@
       <nav aria-label="사이트 메뉴"><a href="${rootPrefix}about.html?v=9">요약</a><a href="${rootPrefix}texts.html?v=9">생각</a><a href="${contentPrefix}resume.html?v=9">이력</a><a href="https://blog.younglee.co.kr" target="_blank" rel="noopener noreferrer">블로그</a></nav>
     </div>
     <button class="legacy-list-toggle" type="button" aria-expanded="false" aria-controls="legacy-work-list">전체 작업 <span>20</span></button>
-    <nav id="legacy-work-list" class="legacy-work-list">${sections}${exhibitionSection}${textSection}</nav>`;
+    <nav id="legacy-work-list" class="legacy-work-list">${sections}${textSection}${exhibitionSection}</nav>`;
 
   const main = document.querySelector(onHome ? 'main#top' : 'main.container');
   if (!main) return;
@@ -102,6 +118,8 @@
   } else {
     layout.append(aside, main);
   }
+
+  bindExhibitionToggle(aside);
 
   const button = aside.querySelector('.legacy-list-toggle');
   const list = aside.querySelector('.legacy-work-list');

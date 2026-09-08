@@ -93,7 +93,7 @@
 
   // 전시 아카이브 링크: 아래 이름과 주소만 실제 정보로 교체하면 됩니다.
   const exhibitionLinks = [
-    ['Archive 01', '2025 값싼 시계와 반딧불이, PlanB Project Space', 'https://planb.younglee.co.kr/'],
+    ['Archive 01', '2025 값싼 시계와 반딧불이, PlanB Project Space', 'https://planb2025.younglee.co.kr/'],
     ['Archive 02', '2020 만물시장, Label Gallery', 'https://labelgallery.co.kr/exhibitions/%ec%9d%b4%ec%98%81%ec%9d%b4-%ec%88%98%ec%a7%91%ed%95%9c-%eb%a7%8c%eb%ac%bc%ec%8b%9c%ec%9e%a5%ec%9d%98-%ec%98%9b-%ea%b0%84%ed%8c%90%eb%93%a4/'],
     ['Archive 03', '2019 대추와 꿀벌, 인사아트스페이스', 'https://www.galleryinsaart.com/exhibition/%EC%9D%B4%EC%98%81-%EA%B0%9C%EC%9D%B8%EC%A0%84/']
   ];

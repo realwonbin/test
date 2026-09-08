@@ -1,11 +1,5 @@
 (() => {
   const prepareJustifiedGalleries = () => {
-    document.querySelectorAll('.image-gallery.two, .image-gallery.three, .image-gallery.four, .image-gallery.five, .image-gallery.six, .image-gallery.seven').forEach((gallery) => {
-      const linkedImages = gallery.querySelectorAll(':scope > a[data-lightbox]');
-      const isReferenceMaterial = gallery.closest('.reference-content, .more-gallery');
-      if (linkedImages.length >= 3 && !isReferenceMaterial) gallery.classList.add('justified');
-    });
-
     document.querySelectorAll('.image-gallery.justified').forEach((gallery) => {
       const items = [...gallery.querySelectorAll(':scope > a')];
       if (!items.length) return;

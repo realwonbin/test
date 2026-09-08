@@ -36,6 +36,13 @@
     ]}
   ];
 
+  // 전시 아카이브 링크: 아래 이름과 주소만 실제 정보로 교체하면 됩니다.
+  const exhibitionLinks = [
+    ['Archive 01', '전시 아카이브', 'https://example.com/'],
+    ['Archive 02', '전시 프로젝트', 'https://example.com/'],
+    ['Related', '관련 기록', 'https://example.com/']
+  ];
+
   const onHome = document.body.classList.contains('home-sidebar-page');
   const inContents = location.pathname.includes('/contents/');
   const inTextPages = location.pathname.includes('/texts/');
@@ -56,8 +63,15 @@
       <a href="${rootPrefix}texts/near-things.html?v=9"><span>윤리에 대한</span>가까운 것들은 가장 멀리 있다</a>
     </section>`;
 
+  const exhibitionSection = `
+    <section class="sidebar-exhibitions">
+      <h2>전시 기록</h2>
+      ${exhibitionLinks.map(([label, name, href]) => `<a href="${href}" target="_blank" rel="noopener noreferrer"><span>${label}</span>${name}</a>`).join('')}
+    </section>`;
+
   const existingList = document.querySelector('.legacy-portfolio-layout .legacy-work-list');
   if (existingList) {
+    if (!existingList.querySelector('.sidebar-exhibitions')) existingList.insertAdjacentHTML('beforeend', exhibitionSection);
     if (!existingList.querySelector('.sidebar-texts')) existingList.insertAdjacentHTML('beforeend', textSection);
     return;
   }
@@ -71,7 +85,7 @@
       <nav aria-label="사이트 메뉴"><a href="${rootPrefix}about.html?v=9">요약</a><a href="${rootPrefix}texts.html?v=9">생각</a><a href="${contentPrefix}resume.html?v=9">이력</a><a href="https://blog.younglee.co.kr" target="_blank" rel="noopener noreferrer">블로그</a></nav>
     </div>
     <button class="legacy-list-toggle" type="button" aria-expanded="false" aria-controls="legacy-work-list">전체 작업 <span>20</span></button>
-    <nav id="legacy-work-list" class="legacy-work-list">${sections}${textSection}</nav>`;
+    <nav id="legacy-work-list" class="legacy-work-list">${sections}${exhibitionSection}${textSection}</nav>`;
 
   const main = document.querySelector(onHome ? 'main#top' : 'main.container');
   if (!main) return;

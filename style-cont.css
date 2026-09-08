@@ -250,6 +250,7 @@ h2 {
 @media(max-width:480px){.legacy-sidebar-head nav a:nth-child(n+3){display:none}.legacy-work-list.is-open{display:block}.legacy-work-list section{margin-bottom:26px}.legacy-sidebar-page .image-gallery.five{grid-template-columns:repeat(2,1fr)}}
 
 .legacy-work-list .sidebar-texts{margin-top:38px;padding-top:20px;border-top:1px solid #d7d3ce}.legacy-work-list .sidebar-texts a{grid-template-columns:60px minmax(0,1fr)}.legacy-work-list .sidebar-texts a span{font-size:10px}
+.legacy-work-list .sidebar-exhibitions{margin-top:38px;padding-top:20px;border-top:1px solid #d7d3ce}.legacy-work-list .sidebar-exhibitions a{grid-template-columns:60px minmax(0,1fr)}
 
 /* Unified portfolio pages */
 .legacy-sidebar-page{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:#fff;color:#191919;font-size:15px;line-height:1.75}
@@ -265,5 +266,6 @@ h2 {
 
 /* Stable sidebar shell for introduction, texts and résumé */
 .site-shell-page{margin:0;padding:0;background:#fff;color:#191919}.site-shell-page>.content-portfolio-layout>.container{width:min(100%,780px);max-width:none;margin:0 auto;padding:62px 38px 100px;background:#fff;color:#191919;line-height:1.8;text-align:left}.site-shell-page>.content-portfolio-layout>.container>h2{margin:0 0 44px;padding:0 0 18px;border-bottom:1px solid #191919;font-size:29px;font-weight:400;text-align:left}.resume-page>.content-portfolio-layout>.container h3{margin:54px 0 18px;padding-top:22px;border-top:1px solid #ddd;font-size:17px;font-weight:500}.resume-page>.content-portfolio-layout>.container a{text-decoration:underline;text-decoration-color:#bbb;text-underline-offset:3px}
+.exhibition-page>.content-portfolio-layout>.container section{scroll-margin-top:30px}.exhibition-page>.content-portfolio-layout>.container section p{margin:0;padding:8px 0;border-bottom:1px solid #eee}
 @media(max-width:760px){.site-shell-page>.content-portfolio-layout>.container{width:100%;padding:42px 20px 72px}.site-shell-page>.content-portfolio-layout>.container>h2{font-size:25px}}
 .site-shell-page *{box-sizing:border-box}

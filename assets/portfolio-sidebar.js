@@ -63,6 +63,7 @@
   const textSection = `
     <section class="sidebar-texts">
       <h2>생각</h2>
+      <a href="${rootPrefix}texts/blue-chrysanthemum.html?v=9"><span>작업에 대한</span>푸른 국화</a>
       <a href="${rootPrefix}texts/tangled-thread.html?v=9"><span>존재에 대한</span>엉킨 실타래, 달항아리</a>
       <a href="${rootPrefix}texts/this-text-does-not-explain.html?v=9"><span>매체에 대한</span>이 글은 작업을 설명하지 않습니다</a>
       <a href="${rootPrefix}texts/near-things.html?v=9"><span>윤리에 대한</span>가까운 것들은 가장 멀리 있다</a>

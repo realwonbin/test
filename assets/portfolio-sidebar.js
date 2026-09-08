@@ -1,7 +1,7 @@
 (() => {
   const prepareJustifiedGalleries = () => {
     document.querySelectorAll('.image-gallery.justified').forEach((gallery) => {
-      const items = [...gallery.querySelectorAll(':scope > a')];
+      const items = [...gallery.querySelectorAll(':scope > a, :scope > img')];
       if (!items.length) return;
 
       const layout = () => {
@@ -10,7 +10,7 @@
         const gap = 8;
         const targetHeight = width < 600 ? 128 : 170;
         const ratios = items.map((item) => {
-          const image = item.querySelector('img');
+          const image = item.matches('img') ? item : item.querySelector('img');
           return image?.naturalWidth && image?.naturalHeight ? image.naturalWidth / image.naturalHeight : 1;
         });
 
@@ -38,7 +38,7 @@
       };
 
       Promise.all(items.map((item) => {
-        const image = item.querySelector('img');
+        const image = item.matches('img') ? item : item.querySelector('img');
         if (!image || image.complete) return Promise.resolve();
         return new Promise((resolve) => image.addEventListener('load', resolve, { once: true }));
       })).then(layout);

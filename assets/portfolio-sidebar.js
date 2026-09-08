@@ -74,9 +74,9 @@
   const textSection = `
     <section class="sidebar-texts">
       <h2>생각들</h2>
-      <a href="${rootPrefix}texts/tangled-thread.html?v=9"><span>존재</span>엉킨 실타래, 달항아리</a>
-      <a href="${rootPrefix}texts/this-text-does-not-explain.html?v=9"><span>매체</span>이 글은 작업을 설명하지 않습니다</a>
-      <a href="${rootPrefix}texts/near-things.html?v=9"><span>윤리</span>가까운 것들은 가장 멀리 있다</a>
+      <a href="${rootPrefix}texts/tangled-thread.html?v=9"><span>존재에 대한</span>엉킨 실타래, 달항아리</a>
+      <a href="${rootPrefix}texts/this-text-does-not-explain.html?v=9"><span>매체에 대한</span>이 글은 작업을 설명하지 않습니다</a>
+      <a href="${rootPrefix}texts/near-things.html?v=9"><span>윤리에 대한</span>가까운 것들은 가장 멀리 있다</a>
     </section>`;
 
   const existingList = document.querySelector('.legacy-portfolio-layout .legacy-work-list');
@@ -91,7 +91,7 @@
   aside.innerHTML = `
     <div class="legacy-sidebar-head">
       <a class="legacy-brand" href="${rootPrefix}index.html?v=9">이영 <span>Lee Young</span></a>
-      <nav aria-label="사이트 메뉴"><a href="${rootPrefix}about.html?v=9">소개</a><a href="${rootPrefix}texts.html?v=9">글</a><a href="${contentPrefix}resume.html?v=9">이력</a><a href="mailto:iam2022@gmail.com">연락</a></nav>
+      <nav aria-label="사이트 메뉴"><a href="${rootPrefix}about.html?v=9">요약</a><a href="${rootPrefix}texts.html?v=9">생각</a><a href="${contentPrefix}resume.html?v=9">이력</a><a href="blog.younglee.co.kr">블로그</a></nav>
     </div>
     <button class="legacy-list-toggle" type="button" aria-expanded="false" aria-controls="legacy-work-list">전체 작업 <span>20</span></button>
     <nav id="legacy-work-list" class="legacy-work-list">${sections}${textSection}</nav>`;

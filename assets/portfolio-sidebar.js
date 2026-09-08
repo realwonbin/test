@@ -120,7 +120,7 @@
   }
 
   const aside = document.createElement('aside');
-  aside.className = 'legacy-sidebar';s
+  aside.className = 'legacy-sidebar';
   aside.setAttribute('aria-label', '전체 작업 목록');
   aside.innerHTML = `
     <div class="legacy-sidebar-head">

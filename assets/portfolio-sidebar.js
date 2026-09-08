@@ -1,4 +1,57 @@
 (() => {
+  const prepareJustifiedGalleries = () => {
+    document.querySelectorAll('.image-gallery.two, .image-gallery.three, .image-gallery.four, .image-gallery.five, .image-gallery.six, .image-gallery.seven').forEach((gallery) => {
+      const linkedImages = gallery.querySelectorAll(':scope > a[data-lightbox]');
+      const isReferenceMaterial = gallery.closest('.reference-content, .more-gallery');
+      if (linkedImages.length >= 3 && !isReferenceMaterial) gallery.classList.add('justified');
+    });
+
+    document.querySelectorAll('.image-gallery.justified').forEach((gallery) => {
+      const items = [...gallery.querySelectorAll(':scope > a')];
+      if (!items.length) return;
+
+      const layout = () => {
+        const width = gallery.clientWidth;
+        if (!width) return;
+        const gap = 8;
+        const targetHeight = width < 600 ? 128 : 170;
+        const ratios = items.map((item) => {
+          const image = item.querySelector('img');
+          return image?.naturalWidth && image?.naturalHeight ? image.naturalWidth / image.naturalHeight : 1;
+        });
+
+        let start = 0;
+        while (start < items.length) {
+          let end = start;
+          let ratioTotal = 0;
+          while (end < items.length) {
+            ratioTotal += ratios[end];
+            end += 1;
+            if (ratioTotal * targetHeight + gap * (end - start - 1) >= width) break;
+          }
+
+          const isLastRow = end === items.length;
+          const rowHeight = isLastRow
+            ? Math.min(targetHeight, (width - gap * (end - start - 1)) / ratioTotal)
+            : (width - gap * (end - start - 1)) / ratioTotal;
+
+          for (let index = start; index < end; index += 1) {
+            items[index].style.width = `${ratios[index] * rowHeight}px`;
+            items[index].style.height = `${rowHeight}px`;
+          }
+          start = end;
+        }
+      };
+
+      Promise.all(items.map((item) => {
+        const image = item.querySelector('img');
+        if (!image || image.complete) return Promise.resolve();
+        return new Promise((resolve) => image.addEventListener('load', resolve, { once: true }));
+      })).then(layout);
+      new ResizeObserver(layout).observe(gallery);
+    });
+  };
+
   const prepareHiddenGalleries = () => {
     document.querySelectorAll('.hidden-gallery').forEach((gallery) => {
       const precedingGrids = [...document.querySelectorAll('.image-gallery.two, .image-gallery.three, .image-gallery.four, .image-gallery.five, .image-gallery.six, .image-gallery.seven')]
@@ -17,6 +70,7 @@
   };
 
   prepareHiddenGalleries();
+  prepareJustifiedGalleries();
 
   if (new URLSearchParams(location.search).get('embed') === '1') {
     document.body.classList.add('embedded-content');

@@ -1,8 +1,6 @@
 (() => {
-  const enhanceHiddenGalleries = () => {
-    document.querySelectorAll('.hidden-gallery').forEach((gallery, index) => {
-      if (gallery.dataset.collapsible === 'true') return;
-
+  const prepareHiddenGalleries = () => {
+    document.querySelectorAll('.hidden-gallery').forEach((gallery) => {
       const precedingGrids = [...document.querySelectorAll('.image-gallery.two, .image-gallery.three, .image-gallery.four, .image-gallery.five, .image-gallery.six, .image-gallery.seven')]
         .filter((grid) => grid.compareDocumentPosition(gallery) & Node.DOCUMENT_POSITION_FOLLOWING);
       const visibleGrid = precedingGrids.at(-1);
@@ -13,31 +11,10 @@
           visibleItems.slice(completeRows).reverse().forEach((item) => gallery.prepend(item));
         }
       }
-
-      const count = gallery.querySelectorAll(':scope > a').length;
-      if (!count) return;
-
-      const id = `hidden-gallery-${index + 1}`;
-      const button = document.createElement('button');
-      button.className = 'gallery-toggle';
-      button.type = 'button';
-      button.setAttribute('aria-expanded', 'false');
-      button.setAttribute('aria-controls', id);
-      button.innerHTML = `<span>이미지 더 보기</span><small>${count}장</small>`;
-
-      gallery.id = id;
-      gallery.dataset.collapsible = 'true';
-      gallery.before(button);
-      button.addEventListener('click', () => {
-        const open = button.getAttribute('aria-expanded') !== 'true';
-        button.setAttribute('aria-expanded', String(open));
-        gallery.classList.toggle('is-open', open);
-        button.querySelector('span').textContent = open ? '추가 이미지 접기' : '이미지 더 보기';
-      });
     });
   };
 
-  enhanceHiddenGalleries();
+  prepareHiddenGalleries();
 
   const projects = [
     { title: '표면의 말 : 황학동 만물시장에서 시작한 간판기록의 연속과 확장', items: [

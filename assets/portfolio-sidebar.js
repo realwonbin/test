@@ -6,8 +6,10 @@
       const visibleGrid = precedingGrids.at(-1);
       if (visibleGrid) {
         const visibleItems = [...visibleGrid.querySelectorAll(':scope > a')];
-        const completeRows = Math.min(Math.floor(visibleItems.length / 4) * 4, 20);
-        if (completeRows >= 16 && visibleItems.length > completeRows) {
+        const columnNames = ['two', 'three', 'four', 'five', 'six', 'seven'];
+        const columns = columnNames.findIndex((name) => visibleGrid.classList.contains(name)) + 2;
+        const completeRows = Math.min(Math.floor(visibleItems.length / columns) * columns, columns * 5);
+        if (completeRows >= columns * 4 && visibleItems.length > completeRows) {
           visibleItems.slice(completeRows).reverse().forEach((item) => gallery.prepend(item));
         }
       }

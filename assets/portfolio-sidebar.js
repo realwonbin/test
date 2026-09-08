@@ -16,6 +16,11 @@
 
   prepareHiddenGalleries();
 
+  if (window.self !== window.top) {
+    document.body.classList.add('embedded-content');
+    return;
+  }
+
   const projects = [
     { title: '표면의 말 : 황학동 만물시장에서 시작한 간판기록의 연속과 확장', items: [
       ['2007', '만물시장', 'everythingmarket.html'], ['2008', '인민로', 'renminro.html'],
@@ -84,6 +89,28 @@
     });
   };
 
+  const bindSidebarNavigation = (aside, contentArea) => {
+    aside.addEventListener('click', (event) => {
+      const link = event.target.closest('a');
+      if (!link || link.classList.contains('legacy-brand') || link.target === '_blank' || link.protocol === 'mailto:') return;
+
+      const url = new URL(link.href, location.href);
+      if (url.protocol !== 'file:' || !url.pathname.includes('/88_test/')) return;
+      event.preventDefault();
+
+      url.searchParams.set('embed', '1');
+      let frame = contentArea.querySelector(':scope > .sidebar-content-frame');
+      if (!frame) {
+        frame = document.createElement('iframe');
+        frame.className = 'sidebar-content-frame';
+        frame.name = 'portfolio-content';
+        frame.title = '선택한 콘텐츠';
+        contentArea.replaceChildren(frame);
+      }
+      frame.src = url.href;
+    });
+  };
+
   const existingList = document.querySelector('.legacy-portfolio-layout .legacy-work-list');
   if (existingList) {
     if (!existingList.querySelector('.sidebar-texts')) existingList.insertAdjacentHTML('beforeend', textSection);
@@ -115,8 +142,13 @@
     content.append(main);
     if (footer) content.append(footer);
     layout.append(aside, content);
+    bindSidebarNavigation(aside, content);
   } else {
-    layout.append(aside, main);
+    const content = document.createElement('div');
+    content.className = 'sidebar-content-area';
+    content.append(main);
+    layout.append(aside, content);
+    bindSidebarNavigation(aside, content);
   }
 
   bindExhibitionToggle(aside);

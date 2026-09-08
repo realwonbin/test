@@ -1,4 +1,44 @@
 (() => {
+  const enhanceHiddenGalleries = () => {
+    document.querySelectorAll('.hidden-gallery').forEach((gallery, index) => {
+      if (gallery.dataset.collapsible === 'true') return;
+
+      const precedingGrids = [...document.querySelectorAll('.image-gallery.two, .image-gallery.three, .image-gallery.four, .image-gallery.five, .image-gallery.six, .image-gallery.seven')]
+        .filter((grid) => grid.compareDocumentPosition(gallery) & Node.DOCUMENT_POSITION_FOLLOWING);
+      const visibleGrid = precedingGrids.at(-1);
+      if (visibleGrid) {
+        const visibleItems = [...visibleGrid.querySelectorAll(':scope > a')];
+        const completeRows = Math.min(Math.floor(visibleItems.length / 4) * 4, 20);
+        if (completeRows >= 16 && visibleItems.length > completeRows) {
+          visibleItems.slice(completeRows).reverse().forEach((item) => gallery.prepend(item));
+        }
+      }
+
+      const count = gallery.querySelectorAll(':scope > a').length;
+      if (!count) return;
+
+      const id = `hidden-gallery-${index + 1}`;
+      const button = document.createElement('button');
+      button.className = 'gallery-toggle';
+      button.type = 'button';
+      button.setAttribute('aria-expanded', 'false');
+      button.setAttribute('aria-controls', id);
+      button.innerHTML = `<span>이미지 더 보기</span><small>${count}장</small>`;
+
+      gallery.id = id;
+      gallery.dataset.collapsible = 'true';
+      gallery.before(button);
+      button.addEventListener('click', () => {
+        const open = button.getAttribute('aria-expanded') !== 'true';
+        button.setAttribute('aria-expanded', String(open));
+        gallery.classList.toggle('is-open', open);
+        button.querySelector('span').textContent = open ? '추가 이미지 접기' : '이미지 더 보기';
+      });
+    });
+  };
+
+  enhanceHiddenGalleries();
+
   const projects = [
     { title: '표면의 말', items: [
       ['2007', '만물시장', 'everythingmarket.html'], ['2008', '인민로', 'renminro.html'],
@@ -21,21 +61,22 @@
 
   const onHome = document.body.classList.contains('home-sidebar-page');
   const inContents = location.pathname.includes('/contents/');
-  const contentPrefix = inContents ? '' : 'contents/';
-  const rootPrefix = inContents ? '../' : '';
+  const inTextPages = location.pathname.includes('/texts/');
+  const rootPrefix = (inContents || inTextPages) ? '../' : '';
+  const contentPrefix = inContents ? '' : `${rootPrefix}contents/`;
   const current = location.pathname.split('/').pop() || 'index.html';
   const sections = projects.map(({ title, items }) => `
     <section>
       <h2>${title}</h2>
-      ${items.map(([year, name, href]) => `<a${href === current ? ' class="is-current" aria-current="page"' : ''} href="${contentPrefix}${href}?v=8"><span>${year}</span>${name}</a>`).join('')}
+      ${items.map(([year, name, href]) => `<a${href === current ? ' class="is-current" aria-current="page"' : ''} href="${contentPrefix}${href}?v=9"><span>${year}</span>${name}</a>`).join('')}
     </section>`).join('');
 
   const textSection = `
     <section class="sidebar-texts">
-      <h2>글</h2>
-      <a href="${rootPrefix}texts.html?v=8#intro1"><span>작가노트</span>엉킨 실타래, 달항아리</a>
-      <a href="${rootPrefix}texts.html?v=8#intro2"><span>작업론</span>이 글은 작업을 설명하지 않습니다</a>
-      <a href="${rootPrefix}texts.html?v=8#intro3"><span>에세이</span>가까운 것들은 가장 멀리 있다</a>
+      <h2>생각들</h2>
+      <a href="${rootPrefix}texts/tangled-thread.html?v=9"><span>존재</span>엉킨 실타래, 달항아리</a>
+      <a href="${rootPrefix}texts/this-text-does-not-explain.html?v=9"><span>매체</span>이 글은 작업을 설명하지 않습니다</a>
+      <a href="${rootPrefix}texts/near-things.html?v=9"><span>윤리</span>가까운 것들은 가장 멀리 있다</a>
     </section>`;
 
   const existingList = document.querySelector('.legacy-portfolio-layout .legacy-work-list');
@@ -49,8 +90,8 @@
   aside.setAttribute('aria-label', '전체 작업 목록');
   aside.innerHTML = `
     <div class="legacy-sidebar-head">
-      <a class="legacy-brand" href="${rootPrefix}index.html?v=8">이영 <span>Lee Young</span></a>
-      <nav aria-label="사이트 메뉴"><a href="${rootPrefix}texts.html?v=8#intro0">소개</a><a href="${rootPrefix}texts.html?v=8#intro1">글</a><a href="${contentPrefix}resume.html?v=8">이력</a><a href="mailto:iam2022@gmail.com">연락</a></nav>
+      <a class="legacy-brand" href="${rootPrefix}index.html?v=9">이영 <span>Lee Young</span></a>
+      <nav aria-label="사이트 메뉴"><a href="${rootPrefix}about.html?v=9">소개</a><a href="${rootPrefix}texts.html?v=9">글</a><a href="${contentPrefix}resume.html?v=9">이력</a><a href="mailto:iam2022@gmail.com">연락</a></nav>
     </div>
     <button class="legacy-list-toggle" type="button" aria-expanded="false" aria-controls="legacy-work-list">전체 작업 <span>20</span></button>
     <nav id="legacy-work-list" class="legacy-work-list">${sections}${textSection}</nav>`;
